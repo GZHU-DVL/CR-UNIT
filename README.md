@@ -15,9 +15,9 @@ We have tested on:
 - CUDA 10.1
 - PyTorch 1.7.0
 
-All dependencies for defining the environment are provided in `environment/gpunit_env.yaml`.
+All dependencies for defining the environment are provided in `environment/crunit_env.yaml`.
 ```bash
-conda env create -f ./environment/gpunit_env.yaml
+conda env create -f ./environment/crunit_env.yaml
 ```
 
 ## Dataset Preparation
@@ -43,7 +43,7 @@ python train.py --task TASK --batch BATCH_SIZE --iter ITERATIONS \
                 --target_paths TPATH1 TPATH2 ... TPATHT --target_num TNUM1 TNUM2 ... TNUMT
 ```
 ### examples
-> python train.py --task cat2dog --source_paths ./data/afhq/images512x512/train/cat --source_num 4000 --target_paths ./data/afhq/images512x512/train/dog --target_num 4000 --mitigate_style_bias
+> python train.py --task cat2dog --source_paths ./data/afhq/cat --source_num 4000 --target_paths ./data/afhq/dog --target_num 4000 --mitigate_style_bias
 
                                                             
                               
