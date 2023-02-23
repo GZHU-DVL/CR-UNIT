@@ -134,21 +134,18 @@ class Generator(BaseNetwork):
         
         # content[0] and content[1] are both 8*8 features
         # current layer is 16*16, so we use content[2]
-        #x = x + content[1] * 0.5
         x = self.up(x)
         x, rgb, state, mask = self.model[1](x, style, content[2], state)
         if mask != None:
             masks += [mask]
         if scale == 1:
             return torch.tanh(rgb), masks
-        #x = x + content[2] * 0.5
         x = self.up(x)
         x, rgb, state, mask = self.model[2](x, style, content[3], state)
         if mask != None:
             masks += [mask]
         if scale == 2:
             return torch.tanh(rgb), masks
-        #x = x + content[3] * 0.5  
         x = self.up(x)
         x, rgb, state, mask = self.model[3](x, style, content[4], state)  
         if mask != None:
