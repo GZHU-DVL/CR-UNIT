@@ -20,11 +20,13 @@ from model.arcface.id_loss import IDLoss
 from util import load_image, visualize, adv_loss, r1_reg, divide_pred, moving_average
 from dataset import create_unpaired_dataloader
 
+# The code is developed based on GP-UNIT
+# https://github.com/williamyang1991/GP-UNIT.git
 
 class TrainOptions():
     def __init__(self):
 
-        self.parser = argparse.ArgumentParser(description="Train Adversarial Image Translation of GP-UNIT")
+        self.parser = argparse.ArgumentParser(description="Train Adversarial Image Translation of CR-UNIT")
         self.parser.add_argument("--task", type=str, help="task type, e.g. cat2dog")
         self.parser.add_argument("--lr", type=float, default=1e-4, help="learning rate")
         self.parser.add_argument("--iter", type=int, default=75000, help="iterations")
@@ -214,7 +216,7 @@ def train(args, dataloader, target_dataloader, netG, netD, optimizer_G, optimize
                     #"d_optim": optimizer_D.state_dict(),
                     #"args": args,
                 },
-                f"%s/%s-%05d{'_out_cycle_no_detach_loss_iter150000'}.pt"%(args.model_path, args.task, idx+1),
+                f"%s/%s-%05d.pt"%(args.model_path, args.task, idx+1),
             )
             del sampler
 
@@ -227,7 +229,7 @@ def train(args, dataloader, target_dataloader, netG, netD, optimizer_G, optimize
                                                         yhat[0:viznum].cpu(), yhat2[0:viznum].cpu()), dim=0), 128)
             utils.save_image(
                 sample,
-                f"log/%s/%05d{'_out_cycle_no_detach_loss_iter150000'}.jpg"%(args.task, (idx+1)),
+                f"log/%s/%05d.jpg"%(args.task, (idx+1)),
                 nrow=viznum,
                 normalize=True,
                 range=(-1, 1),
