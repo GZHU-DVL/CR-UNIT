@@ -1,4 +1,4 @@
-name: gpunit_env
+name: crunit_env
 channels:
   - pytorch
   - conda-forge
@@ -138,4 +138,4 @@ dependencies:
   - xz=5.2.5=h7b6447c_0
   - zlib=1.2.11=h7f8727e_4
   - zstd=1.4.9=haebb681_0
-prefix: ~/anaconda3/envs/gpunit_env
+prefix: ~/anaconda3/envs/crunit_env
