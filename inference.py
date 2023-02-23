@@ -15,7 +15,7 @@ from util import load_image, save_image
 class TestOptions():
     def __init__(self):
 
-        self.parser = argparse.ArgumentParser(description="Inference of GP-UNIT")
+        self.parser = argparse.ArgumentParser(description="Inference of CR-UNIT")
         self.parser.add_argument("--content", type=str, default='./data/afhq/images512x512/test/dog/flickr_dog_000572.jpg', help="path to the content image")
         self.parser.add_argument("--style", type=str, default=None, help="path to the style image, if not specified using randomly sampled styles")
         self.parser.add_argument("--batch", type=int, default=6, help="number of randomly sampled styles")
