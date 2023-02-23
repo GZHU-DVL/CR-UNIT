@@ -1,6 +1,6 @@
 # CR-UNIT
 
-**Unsupervised Image-to-Image Translation with Content Reconstruction**<br>
+## Unsupervised Image-to-Image Translation with Content Reconstruction
 
 Abstract: The goal of unsupervised image-to-image translation is to translate images between two different domains without any paired data. Recent research has shown great progress in this area, but there are still challenges when translating between artificial and natural objects. To overcome this problem, we propose a novel unsupervised image-to-image translation with content reconstruction (CR-UNIT), a staged and from-coarse-to-fine training framework. To be specific, CR-UNIT builds a corresponding relationship among the content features of different domains on a coarse granularity in the first stage. In the second stage, a new content reconstruction module is constructed to extract the fine-grained content and style features, obtaining more detailed semantic correspondence and better fusion of the content and style features. Furthermore, we design a content reconstruction loss to facilitate the training of our model. Extensive experimental results demonstrate the superiority of the proposed CR-UNIT over the existing methods. Especially for the translation task between the artificial and natural objects, our CR-UNIT achieves outstanding effect in terms of perceptive quality and objective metric.
 
