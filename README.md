@@ -49,4 +49,4 @@ python train.py --task TASK --batch BATCH_SIZE --iter ITERATIONS \
                               
 ## Acknowledgments
 
-The code is developed based on [GP-UNIT]:https://github.com/williamyang1991/GP-UNIT
+The code is developed based on GP-UNIT: https://github.com/williamyang1991/GP-UNIT
